@@ -16,10 +16,10 @@ interface PositionsRepositoryInterface
     public function all(): Collection;
 
     /**
-     * Get all with relations
+     * Get one position in collection by id
      * 
-     * @param array $relations
+     * @param int $id
      * @return Collection
      */
-    public function allWith(array $relations): Collection;
+    public function find(int $id): Collection;
 }

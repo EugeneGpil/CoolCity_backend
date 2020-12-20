@@ -21,4 +21,5 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('/get_positions', [PositionsController::class, 'getPositions']);
+Route::get('/positions', [PositionsController::class, 'getPositions']);
+Route::get('/position/{id}', [PositionsController::class, 'getOnePosition']);

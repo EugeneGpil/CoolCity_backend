@@ -31,20 +31,16 @@ class EloquentPositionsRepository implements PositionsRepositoryInterface
     }
 
     /**
-     * Get all with relations
+     * Get one position in collection by id
      * 
-     * @param array $relations
+     * @param int $id
      * @return Collection
      */
-    public function allWith(array $relations): Collection
+    public function find(int $id): Collection
     {
-        $positions = $this->model()
-            ->all();
-
-        foreach ($relations as $relation) {
-            $positions->load($relation);
-        }
-
-        return $positions;
+        return $this->model()
+            ->newQuery()
+            ->where('id', $id)
+            ->get();
     }
 }
