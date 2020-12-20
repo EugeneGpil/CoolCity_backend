@@ -61,12 +61,23 @@ class PositionsService
             return [
                 'status' => true,
                 'payload' => $this->positionsRepository
-                    ->allWith([
-                        'pictures',
-                        'size',
-                        'product',
-                    ])
+                    ->all()
             ];
         }
+    }
+
+    /**
+     * Get one position in collection by id
+     * 
+     * @param int $id
+     * @return array
+     */
+    public function find(int $id): array
+    {
+        return [
+            'status' => true,
+            'payload' => $this->positionsRepository
+                ->find($id),
+        ];
     }
 }
