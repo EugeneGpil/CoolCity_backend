@@ -23,3 +23,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/positions', [PositionsController::class, 'getPositions']);
 Route::get('/position/{id}', [PositionsController::class, 'getOnePosition']);
+Route::get('/product/{id}/positions', [PositionsController::class, 'getPositionsByProduct']);

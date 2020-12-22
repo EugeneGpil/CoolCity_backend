@@ -22,4 +22,12 @@ interface PositionsRepositoryInterface
      * @return Collection
      */
     public function find(int $id): Collection;
+
+    /**
+     * Get positions by product id
+     * 
+     * @param int $id
+     * @return Collection
+     */
+    public function getByProduct(int $id): Collection;
 }
