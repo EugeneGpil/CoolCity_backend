@@ -80,4 +80,19 @@ class PositionsService
                 ->find($id),
         ];
     }
+
+    /**
+     * Get positions by product
+     * 
+     * @param int $id
+     * @return array
+     */
+    public function getByProduct(int $id): array
+    {
+        return [
+            'status' => true,
+            'payload' => $this->positionsRepository
+                ->getByProduct($id)
+        ];
+    }
 }

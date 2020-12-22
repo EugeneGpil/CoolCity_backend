@@ -43,4 +43,18 @@ class EloquentPositionsRepository implements PositionsRepositoryInterface
             ->where('id', $id)
             ->get();
     }
+
+    /**
+     * Get positions by product id
+     * 
+     * @param int $id
+     * @return Collection
+     */
+    public function getByProduct(int $id): Collection
+    {
+        return $this->model()
+            ->newQuery()
+            ->where('product_id', $id)
+            ->get();
+    }
 }
