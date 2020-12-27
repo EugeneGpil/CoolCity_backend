@@ -41,4 +41,24 @@ class Position extends Model
     {
         return $this->BelongsTo(Product::class);
     }
+
+    /**
+     * Get first color
+     * 
+     * @return BelongsTo
+     */
+    public function firstColor(): BelongsTo
+    {
+        return $this->belongsTo(Color::class, 'color_1_id');
+    }
+
+    /**
+     * Get second color
+     * 
+     * @return BelongsTo
+     */
+    public function secondColor(): BelongsTo
+    {
+        return $this->belongsTo(Color::class, 'color_2_id');
+    }
 }

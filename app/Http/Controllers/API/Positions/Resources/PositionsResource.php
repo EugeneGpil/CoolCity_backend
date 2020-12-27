@@ -18,7 +18,9 @@ class PositionsResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'color' => $this->color,
+            'product_id' => $this->product->id,
+            'first_color' => $this->firstColor->name,
+            'second_color' => $this->secondColor->name ?? null,
             'in_stoke' => $this->in_stoke,
             'sell_price' => $this->sell_price,
             'pictures' => PicturesResource::collection($this->pictures),
