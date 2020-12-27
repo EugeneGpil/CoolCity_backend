@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace App\Providers;
 
+use App\Services\Applications\Repositories\ApplicationsRepositoryInterface;
+use App\Services\Applications\Repositories\EloquentApplicationsRepository;
 use App\Services\Positions\Repositories\EloquentPositionsRepository;
 use App\Services\Positions\Repositories\PositionsRepositoryInterface;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -19,6 +21,10 @@ class RepositoryInterfaceServiceProvider extends ServiceProvider
     {
         $this->app->bind(PositionsRepositoryInterface::class, function() {
             return new EloquentPositionsRepository();
+        });
+
+        $this->app->bind(ApplicationsRepositoryInterface::class, function() {
+            return new EloquentApplicationsRepository();
         });
     }
 
