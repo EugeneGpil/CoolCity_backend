@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace App\Services\Positions\Repositories;
 
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Collection as SupportCollection;
 
 interface PositionsRepositoryInterface
 {
@@ -30,4 +31,11 @@ interface PositionsRepositoryInterface
      * @return Collection
      */
     public function getByProduct(int $id): Collection;
+
+    /**
+     * Get all excisting ids
+     * 
+     * @return SupportCollection
+     */
+    public function getAllIds(): SupportCollection;
 }

@@ -95,4 +95,18 @@ class PositionsService
                 ->getByProduct($id)
         ];
     }
+
+    /**
+     * Get all ids
+     * 
+     * @return array
+     */
+    public function getAllIds(): array
+    {
+        return [
+            'status' => true,
+            'payload' => $this->positionsRepository
+                ->getAllIds()
+        ];
+    }
 }

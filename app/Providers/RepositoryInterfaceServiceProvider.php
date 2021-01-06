@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace App\Providers;
 
+use App\Services\Products\Repositories\ProductsRepositoryInterface;
+use App\Services\Products\Repositories\EloquentProductsRepository;
 use App\Services\Applications\Repositories\ApplicationsRepositoryInterface;
 use App\Services\Applications\Repositories\EloquentApplicationsRepository;
 use App\Services\Positions\Repositories\EloquentPositionsRepository;
@@ -25,6 +27,10 @@ class RepositoryInterfaceServiceProvider extends ServiceProvider
 
         $this->app->bind(ApplicationsRepositoryInterface::class, function() {
             return new EloquentApplicationsRepository();
+        });
+
+        $this->app->bind(ProductsRepositoryInterface::class, function() {
+            return new EloquentProductsRepository();
         });
     }
 

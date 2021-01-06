@@ -2,6 +2,7 @@
 
 declare(strict_types = 1);
 
+use App\Http\Controllers\API\Products\ProductsController;
 use App\Http\Controllers\API\Applications\ApplicationsController;
 use App\Http\Controllers\API\Positions\PositionsController;
 use Illuminate\Http\Request;
@@ -26,3 +27,6 @@ Route::get('/positions', [PositionsController::class, 'getPositions']);
 Route::get('/position/{id}', [PositionsController::class, 'getOnePosition']);
 Route::get('/product/{id}/positions', [PositionsController::class, 'getPositionsByProduct']);
 Route::post('/application', [ApplicationsController::class, 'create']);
+
+Route::get('/products_ids', [ProductsController::class, 'getAllIds']);
+Route::get('/positions_ids', [PositionsController::class, 'getAllIds']);

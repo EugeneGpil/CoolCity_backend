@@ -7,8 +7,8 @@ namespace App\Http\Controllers\API\Positions;
 use App\Http\Controllers\API\Positions\Requests\GetPositionsRequest;
 use App\Http\Controllers\API\Positions\Requests\GetOnePositionRequest;
 use App\Http\Controllers\API\Positions\Requests\GetPositionsByProductRequest;
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\API\Positions\Resources\PositionsResource;
+use App\Http\Controllers\Controller;
 use App\Services\Positions\PositionsService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -99,5 +99,18 @@ class PositionsController extends Controller
                 $data['payload']
             )
         ]);
+    }
+
+    /**
+     * Get all excisting positions ids
+     * 
+     * @return JsonResponse
+     */
+    public function getAllIds(): JsonResponse
+    {
+        return response()->json(
+            $this->positionsService
+                ->getAllIds()
+        );
     }
 }

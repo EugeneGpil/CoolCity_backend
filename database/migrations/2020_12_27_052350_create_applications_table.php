@@ -30,7 +30,7 @@ class CreateApplicationsTable extends Migration
 
             $table->foreign('position_id')
                 ->references('id')
-                ->on('products');
+                ->on('positions');
         });
     }
 

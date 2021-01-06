@@ -6,6 +6,7 @@ namespace App\Services\Positions\Repositories;
 
 use App\Models\Position;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Collection as SupportCollection;
 
 class EloquentPositionsRepository implements PositionsRepositoryInterface
 {
@@ -56,5 +57,18 @@ class EloquentPositionsRepository implements PositionsRepositoryInterface
             ->newQuery()
             ->where('product_id', $id)
             ->get();
+    }
+
+    /**
+     * Get all excisting ids
+     * 
+     * @return SupportCollection
+     */
+    public function getAllIds(): SupportCollection
+    {
+        return $this->model()
+            ->newQuery()
+            ->where('id', '>', 0)
+            ->pluck('id');
     }
 }
