@@ -36,9 +36,6 @@ class ProductsController extends Controller
      */
     public function getAllIds(): JsonResponse
     {
-        // return response()->json([
-        //     'hi' => 'hi'
-        // ]);
         return response()->json(
             $this->productsService
                 ->getAllIds()
