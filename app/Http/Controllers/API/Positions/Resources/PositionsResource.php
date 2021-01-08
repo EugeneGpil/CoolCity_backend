@@ -26,6 +26,7 @@ class PositionsResource extends JsonResource
             'pictures' => PicturesResource::collection($this->pictures),
             'size' => $this->size->name,
             'title' => $this->product->title,
+            'title_translations' => ProductTitleTranslationsResource::collection($this->product->titleTranslations)
         ];
     }
 }
