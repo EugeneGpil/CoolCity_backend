@@ -2,6 +2,7 @@
 
 declare(strict_types = 1);
 
+use App\Http\Controllers\API\Pictures\PicturesController;
 use App\Http\Controllers\API\Products\ProductsController;
 use App\Http\Controllers\API\Applications\ApplicationsController;
 use App\Http\Controllers\API\Positions\PositionsController;
@@ -30,3 +31,4 @@ Route::post('/application', [ApplicationsController::class, 'create']);
 
 Route::get('/products_ids', [ProductsController::class, 'getAllIds']);
 Route::get('/positions_ids', [PositionsController::class, 'getAllIds']);
+Route::get('/first_existing_picture_url', [PicturesController::class, 'getFirstExistingPictureUrl']);
