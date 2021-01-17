@@ -41,4 +41,18 @@ class EloquentApplicationsRepository implements ApplicationsRepositoryInterface
         $application->save();
         return $application;
     }
+
+    /**
+     * Delete application
+     * 
+     * @param int $id
+     * @return void
+     */
+    public function delete(int $id): void
+    {
+        $this->model()
+            ->newQuery()
+            ->find($id)
+            ->delete();
+    }
 }
