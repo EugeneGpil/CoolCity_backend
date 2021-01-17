@@ -50,7 +50,7 @@ class PositionsController extends Controller
         }
 
         return response()->json([
-            'statsu' => $data['status'],
+            'status' => $data['status'],
             'payload' => PositionsResource::collection(
                 $data['payload']
             )
@@ -102,7 +102,7 @@ class PositionsController extends Controller
     }
 
     /**
-     * Get all excisting positions ids
+     * Get all existing positions ids
      * 
      * @return JsonResponse
      */

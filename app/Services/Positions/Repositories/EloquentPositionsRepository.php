@@ -60,7 +60,7 @@ class EloquentPositionsRepository implements PositionsRepositoryInterface
     }
 
     /**
-     * Get all excisting ids
+     * Get all existing ids
      * 
      * @return SupportCollection
      */
@@ -70,5 +70,19 @@ class EloquentPositionsRepository implements PositionsRepositoryInterface
             ->newQuery()
             ->where('id', '>', 0)
             ->pluck('id');
+    }
+
+    /**
+     * Get first existing product id
+     * 
+     * @return int
+     */
+    public function getFirstExistingId(): int
+    {
+        return $this->model()
+            ->newQuery()
+            ->where('id', '>', 0)
+            ->pluck('id')
+            ->first();
     }
 }

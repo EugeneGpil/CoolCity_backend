@@ -33,9 +33,16 @@ interface PositionsRepositoryInterface
     public function getByProduct(int $id): Collection;
 
     /**
-     * Get all excisting ids
+     * Get all existing ids
      * 
      * @return SupportCollection
      */
     public function getAllIds(): SupportCollection;
+
+    /**
+     * Get first existing product id
+     * 
+     * @return int
+     */
+    public function getFirstExistingId(): int;
 }

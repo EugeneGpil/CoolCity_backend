@@ -31,4 +31,18 @@ class EloquentProductsRepository implements ProductsRepositoryInterface
             ->where('id', '>', 0)
             ->pluck('id');
     }
+
+    /**
+     * Get first existing id
+     * 
+     * @return int
+     */
+    public function getFirstExistingId(): int
+    {
+        return $this->model()
+            ->newQuery()
+            ->where('id', '>', 0)
+            ->pluck('id')
+            ->first();
+    }
 }
