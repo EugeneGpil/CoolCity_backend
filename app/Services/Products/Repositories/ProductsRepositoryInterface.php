@@ -14,4 +14,11 @@ interface ProductsRepositoryInterface
      * @return Collection
      */
     public function getAllIds(): Collection;
+
+    /**
+     * Get first existing id
+     * 
+     * @return int
+     */
+    public function getFirstExistingId(): int;
 }
