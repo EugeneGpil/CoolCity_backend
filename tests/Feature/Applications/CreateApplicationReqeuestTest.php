@@ -26,7 +26,11 @@ class CreateApplicationRequestTest extends BaseTestCase
         $response->assertStatus(200);
         $response->assertJson([
             'status' => true,
+            'payload' => [],
         ]);
+        
+        $this->applicationRepository
+            ->delete(json_decode($response->getContent(), true)['payload']['id']);
     }
 
     /**

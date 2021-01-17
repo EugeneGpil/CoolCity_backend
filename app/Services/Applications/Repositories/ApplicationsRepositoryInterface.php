@@ -15,4 +15,12 @@ interface ApplicationsRepositoryInterface
      * @return Application
      */
     public function create(array $applicationData): Application;
+
+    /**
+     * Delete application
+     * 
+     * @param int $id
+     * @return void
+     */
+    public function delete(int $id): void;
 }

@@ -36,11 +36,10 @@ class ApplicationsService
      */
     public function create(array $applicationData): array
     {
-        $this->applicationsRepositoryInterface
-            ->create($applicationData);
-
         return [
-            'status' => true
+            'status' => true,
+            'payload' =>  $this->applicationsRepositoryInterface
+                ->create($applicationData)
         ];
     }
 }
